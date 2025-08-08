@@ -149,8 +149,35 @@ return {
         },
       },
       html = { filetypes = { 'html', 'twig', 'hbs' } },
-      cssls = {},
-      tailwindcss = {},
+      cssls = {
+        settings = {
+          css = {
+            lint = {
+              unknownAtRules = 'ignore', -- let tailwindcss handle @plugin, @tailwind, etc.
+            },
+          },
+        },
+      },
+      tailwindcss = {
+        filetypes = {
+          'html',
+          'css',
+          'scss',
+          'sass',
+          'javascript',
+          'typescript',
+          'javascriptreact',
+          'typescriptreact',
+          'vue',
+          'svelte',
+        },
+        init_options = {
+          userLanguages = {
+            eelixir = 'html-eex',
+            eruby = 'erb',
+          },
+        },
+      },
       dockerls = {},
       sqlls = {},
       terraformls = {},
