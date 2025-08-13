@@ -9,7 +9,16 @@ vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', ';', 'w', { noremap = true })
 vim.keymap.set('n', ',', 'b', { noremap = true })
 
+-- In insert mode: Ctrl+Left = jump back a word
+vim.keymap.set('i', '<C-Left>', '<C-o>b', { noremap = true })
+
+-- In insert mode: Ctrl+Right = jump forward a word
+vim.keymap.set('i', '<C-Right>', '<C-o>w', { noremap = true })
 -- Normal mode: swap j and k
+
+-- Delete previous word in insert mode with Ctrl+Backspace
+vim.keymap.set('i', '<C-BS>', '<C-w>', { noremap = true })
+
 vim.keymap.set('n', 'j', 'k', { noremap = true })
 vim.keymap.set('n', 'k', 'j', { noremap = true })
 
