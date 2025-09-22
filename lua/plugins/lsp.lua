@@ -112,6 +112,12 @@ return {
             vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
           end, '[T]oggle Inlay [H]ints')
         end
+
+        --  add semantic tokens enable here
+        if client and client.server_capabilities.semanticTokensProvider then
+          -- this tells Neovim to request semantic tokens from the server
+          vim.cmd 'setlocal syntax=on'
+        end
       end,
     })
 
