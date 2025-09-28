@@ -2,7 +2,18 @@ return {
   'neovim/nvim-lspconfig',
   dependencies = {
     -- Automatically install LSPs and related tools to stdpath for Neovim
-    { 'mason-org/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
+    {
+      'mason-org/mason.nvim',
+      config = function()
+        require('mason').setup {
+          registries = {
+            'github:mason-org/mason-registry',
+            'github:Crashdummyy/mason-registry', -- extra registry with Roslyn
+          },
+        }
+      end,
+    }, -- NOTE: Must be loaded before dependants
+
     -- mason-lspconfig:
     -- - Bridges the gap between LSP config names (e.g. "lua_ls") and actual Mason package names (e.g. "lua-language-server").
     -- - Used here only to allow specifying language servers by their LSP name (like "lua_ls") in `ensure_installed`.
@@ -189,6 +200,7 @@ return {
       terraformls = {},
       jsonls = {},
       yamlls = {},
+      roslyn = {},
       lua_ls = {
         settings = {
           Lua = {
