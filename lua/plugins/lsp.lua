@@ -200,7 +200,10 @@ return {
       terraformls = {},
       jsonls = {},
       yamlls = {},
-      roslyn = {},
+      roslyn = {
+        capabilities = capabilities,
+        filetypes = { 'cs' },
+      },
       lua_ls = {
         settings = {
           Lua = {
