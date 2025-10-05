@@ -200,9 +200,28 @@ return {
       terraformls = {},
       jsonls = {},
       yamlls = {},
-      roslyn = {
-        capabilities = capabilities,
-        filetypes = { 'cs' },
+      omnisharp = {
+        cmd = { 'OmniSharp' }, -- installed via Mason
+        filetypes = { 'cs', 'vb' },
+        root_dir = function(fname)
+          local util = require 'lspconfig.util'
+          return util.root_pattern '*.sln'(fname) or util.root_pattern '*.csproj'(fname) or util.root_pattern '.git'(fname) or vim.fn.getcwd()
+        end,
+        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+        settings = {
+          FormattingOptions = {
+            EnableEditorConfigSupport = true,
+            OrganizeImports = true,
+          },
+          RoslynExtensionsOptions = {
+            EnableAnalyzersSupport = true,
+            EnableImportCompletion = true,
+            AnalyzeOpenDocumentsOnly = false,
+          },
+          Sdk = {
+            IncludePrereleases = true,
+          },
+        },
       },
       lua_ls = {
         settings = {
