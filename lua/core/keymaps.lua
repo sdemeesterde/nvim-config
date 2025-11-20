@@ -19,12 +19,12 @@ vim.keymap.set('i', '<C-Right>', '<C-o>w', { noremap = true })
 -- Delete previous word in insert mode with Ctrl+Backspace
 vim.keymap.set('i', '<C-BS>', '<C-w>', { noremap = true })
 
-vim.keymap.set('n', 'j', 'k', { noremap = true })
-vim.keymap.set('n', 'k', 'j', { noremap = true })
+-- vim.keymap.set('n', 'j', 'k', { noremap = true })
+-- vim.keymap.set('n', 'k', 'j', { noremap = true })
 
 -- Swap j and k in visual mode (including line-wise visual mode)
-vim.keymap.set('v', 'j', 'k', { noremap = true })
-vim.keymap.set('v', 'k', 'j', { noremap = true })
+-- vim.keymap.set('v', 'j', 'k', { noremap = true })
+-- vim.keymap.set('v', 'k', 'j', { noremap = true })
 
 -- Normal mode: Move current line up/down
 vim.keymap.set('n', '<A-k>', ':m .+1<CR>==', { noremap = true, silent = true })
