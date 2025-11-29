@@ -27,12 +27,12 @@ vim.keymap.set('i', '<C-BS>', '<C-w>', { noremap = true })
 -- vim.keymap.set('v', 'k', 'j', { noremap = true })
 
 -- Normal mode: Move current line up/down
-vim.keymap.set('n', '<A-k>', ':m .+1<CR>==', { noremap = true, silent = true })
-vim.keymap.set('n', '<A-j>', ':m .-2<CR>==', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { noremap = true, silent = true })
 
 -- Visual mode: Move selected lines up/down
-vim.keymap.set('v', '<A-k>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
-vim.keymap.set('v', '<A-j>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<A-j>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
 -- For conciseness
 local opts = { noremap = true, silent = true }
