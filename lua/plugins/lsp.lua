@@ -196,7 +196,6 @@ return {
         },
       },
       dockerls = {},
-      sqlls = {},
       terraformls = {},
       jsonls = {},
       yamlls = {},

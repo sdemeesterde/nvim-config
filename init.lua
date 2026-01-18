@@ -98,3 +98,6 @@ vim.api.nvim_create_autocmd('FileType', {
     vim.opt_local.winbar = nil
   end,
 })
+
+-- Bind :T <args> to :terminal <args>
+vim.cmd [[command! -nargs=* T terminal <args>]]
